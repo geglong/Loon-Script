@@ -1,0 +1,961 @@
+{
+  "id": "dompling.app.sub",
+  "name": "DomplingYaYa 应用订阅",
+  "author": "@DomplingYaYa",
+  "icon": "https://avatars3.githubusercontent.com/u/23498579?s=460&u=1e87605e4abc4e6ecf3edd8b1d730227f54db4d4&v=4",
+  "repo": "https://github.com/dompling/Script",
+  "apps": [
+   {
+    "id": "多合一签到",
+    "name": "京东",
+    "keys": ["CookieJD", "CookieJD2"],
+    "descs_html": [
+      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js\">脚本注释</a></h4>",
+      "<br />",
+      "<h3 align=\"center\">签到相关教程</h3>",
+      "<p align=\"center\"><iframe src=\"https://www.youtube.com/embed/6vMz1LKF1-8\" width=\"100%\" height=\"100%\"></iframe></p>"
+    ],
+    "settings": [{
+      "id": "JD_DailyBonusLog",
+      "name": "详细响应日志",
+      "val": false,
+      "type": "boolean",
+      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+    }, {
+      "id": "JD_Crash_disable",
+      "name": "崩溃自动禁用",
+      "val": true,
+      "type": "boolean",
+      "desc": "脚本运行崩溃时(如VPN断连), 下次运行时将自动禁用相关崩溃接口(仅部分接口启用), 注: 崩溃时可能会误禁用正常接口."
+    }, {
+      "id": "JD_Retry_disable",
+      "name": "签到接口增强",
+      "val": true,
+      "type": "boolean",
+      "desc": "用于部分接口提示\"不含活动数据\"问题, 开启后会进行二次查询, 注: 可能会导致崩溃(小概率)."
+    }, {
+      "id": "JD_Follow_disable",
+      "name": "自动关注店铺",
+      "val": true,
+      "type": "boolean",
+      "desc": "部分接口签到过程可能需要关注店铺, 如介意可选择关闭."
+    }, {
+      "id": "JD_DailyBonusDisables",
+      "name": "签到接口禁用",
+      "val": "",
+      "type": "checkboxes",
+      "desc": "",
+      "items": [{
+        "key": "SpeedUp",
+        "label": "天天加速"
+      }, {
+        "key": "JDBean",
+        "label": "京东京豆"
+      }, {
+        "key": "JDWebcasts",
+        "label": "京东直播"
+      }, {
+        "key": "JRBean",
+        "label": "金融金贴"
+      }, {
+        "key": "JRDoll",
+        "label": "金融签壹"
+      }, {
+        "key": "JRTwoDoll",
+        "label": "金融签贰"
+      }, {
+        "key": "JRThreeDoll",
+        "label": "金融签叁"
+      }, {
+        "key": "JRFourDoll",
+        "label": "金融签肆"
+      }, {
+        "key": "JRFiveDoll",
+        "label": "金融签伍"
+      }, {
+        "key": "XJDouble",
+        "label": "现金双签"
+      }, {
+        "key": "JRLottery",
+        "label": "金融抽奖"
+      }, {
+        "key": "JRSteel",
+        "label": "金融钢镚"
+      }, {
+        "key": "JDTurn",
+        "label": "京东转盘"
+      }, {
+        "key": "JDGStore",
+        "label": "京东超市"
+      }, {
+        "key": "JDComputer",
+        "label": "京东电脑"
+      }, {
+        "key": "JD3C",
+        "label": "京东数码"
+      }, {
+        "key": "JDClothing",
+        "label": "京东服饰"
+      }, {
+        "key": "JDSuitcase",
+        "label": "京东箱包"
+      }, {
+        "key": "JDUnderwear",
+        "label": "京东内衣"
+      }, {
+        "key": "JDChild",
+        "label": "京东童装"
+      }, {
+        "key": "JDBaby",
+        "label": "京东母婴"
+      }, {
+        "key": "JDFineWine",
+        "label": "京东酒饮"
+      }, {
+        "key": "JDCash",
+        "label": "京东红包"
+      }, {
+        "key": "JDFSale",
+        "label": "京东闪购"
+      }, {
+        "key": "JDBook",
+        "label": "京东图书"
+      }, {
+        "key": "JDSchool",
+        "label": "京东校园"
+      }, {
+        "key": "JDShoes",
+        "label": "京东鞋靴"
+      }, {
+        "key": "JDHealth",
+        "label": "京东健康"
+      }, {
+        "key": "JDCalendar",
+        "label": "京东日历"
+      }, {
+        "key": "JDWomen",
+        "label": "京东女装"
+      }, {
+        "key": "JDSecKill",
+        "label": "京东秒杀"
+      }, {
+        "key": "JTDouble",
+        "label": "金贴双签"
+      }, {
+        "key": "JDMakeup",
+        "label": "京东美妆"
+      }, {
+        "key": "JDVege",
+        "label": "京东菜场"
+      }, {
+        "key": "JDClean",
+        "label": "京东清洁"
+      }, {
+        "key": "JDCare",
+        "label": "京东个护"
+      }, {
+        "key": "JDJewels",
+        "label": "京东珠宝"
+      }, {
+        "key": "JDCube",
+        "label": "京东魔方"
+      }, {
+        "key": "JDBuyCar",
+        "label": "京东汽车"
+      }, {
+        "key": "JDDouble",
+        "label": "京豆双签"
+      }, {
+        "key": "subsidy",
+        "label": "京东金贴"
+      }, {
+        "key": "JDGetCash",
+        "label": "京东现金"
+      }, {
+        "key": "JDShake",
+        "label": "京东摇一摇"
+      }, {
+        "key": "Qbear",
+        "label": "总京豆查询"
+      }, {
+        "key": "TCash",
+        "label": "总红包查询"
+      }, {
+        "key": "TSteel",
+        "label": "总钢镚查询"
+      }, {
+        "key": "TotalSubsidy",
+        "label": "总金贴查询"
+      }, {
+        "key": "TotalMoney",
+        "label": "总现金查询"
+      }]
+    }, {
+      "id": "JD_DailyBonusTimeOut",
+      "name": "超时退出 (毫秒)",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认无超时 (点击以展开说明)",
+      "desc": "按需填写, 用于由网络不稳定引起的脚本中断, 正常或越狱用户建议留空. 如QX日志出现大量\"JS Context timeout\"后脚本中断时, 建议填写6000"
+    }, {
+      "id": "JD_DailyBonusDelay",
+      "name": "接口延迟 (毫秒)",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认并发无延迟 (点击以展开说明)",
+      "desc": "延迟作用于每个签到接口, 该参数接受随机或指定延迟(例: '2000'则表示延迟2秒; '2000-5000'则表示延迟最小2秒,最大5秒内的随机延迟), 如填入延迟则切换顺序签到(耗时较长); VPN重启或越狱用户建议填写1(顺序执行), Surge用户请注意在SurgeUI界面调整脚本超时."
+    }],
+    "scripts": [{
+      "name": "京东签到",
+      "script": "https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js"
+    }, {
+      "name": "初始化设置",
+      "script": "https://gist.githubusercontent.com/NobyDa/91cbe57dd50b3588a975af8922507a72/raw/JD_initial.js"
+    }],
+    "author": "@NobyDa",
+    "repo": "https://github.com/NobyDa/Script/tree/master/JD-DailyBonus",
+    "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/jd.png", "https://raw.githubusercontent.com/Orz-3/task/master/jd.png"]
+  },
+   {
+      "id": "10000",
+      "name": "10000",
+      "keys": [],
+      "settings": [{ "id": "chavy_mobile_10000", "name": "手机号码", "val": "", "type": "textarea", "placeholder": "18918920000,\n18918920000", "autoGrow": true, "rows": 5, "desc": "以英文逗号分隔多个号码, 可加回车" }],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/10000/10000.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/10000/10000.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10000.png", "https://raw.githubusercontent.com/Orz-3/task/master/10000.png"]
+    },
+    {
+      "id": "10010",
+      "name": "10010",
+      "keys": ["chavy_tokenurl_10010", "chavy_tokenheader_10010", "chavy_signurl_10010", "chavy_signheader_10010", "chavy_loginlotteryurl_10010", "chavy_loginlotteryheader_10010", "chavy_findlotteryurl_10010", "chavy_findlotteryheader_10010"],
+      "settings": [
+        { "id": "chavy_golottery_10010", "name": "天天抽奖", "val": true, "type": "boolean", "desc": "天天抽奖开关" },
+        { "id": "chavy_gosign_10010", "name": "签到", "val": true, "type": "boolean", "desc": "签到开关" }
+      ],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/10010",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10010.png", "https://raw.githubusercontent.com/Orz-3/task/master/10010.png"]
+    },
+    {
+      "id": "chavyleung.10086",
+      "name": "10086",
+      "keys": ["chavy_autologin_cmcc", "chavy_getfee_cmcc", "chavy_tokenurl_10086", "chavy_tokenheader_10086", "chavy_signurl_10086", "chavy_signheader_10086"],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/10086/10086.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/10086.png", "https://raw.githubusercontent.com/Orz-3/task/master/10086.png"]
+    },
+    {
+      "id": "chavyleung.meituan",
+      "name": "美团",
+      "keys": ["chavy_tokenurl_meituan", "chavy_tokenheader_meituan", "chavy_signurl_meituan", "chavy_signheader_meituan", "chavy_signbody_meituan"],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/meituan/meituan.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/meituan.png", "https://raw.githubusercontent.com/Orz-3/task/master/meituan.png"]
+    },
+    {
+      "id": "smzdm",
+      "name": "什么值得买",
+      "keys": ["chavy_cookie_smzdm"],
+      "settings": [
+        { "id": "chavy_accounts_smzdm", "name": "大妈账号", "val": "", "type": "textarea", "placeholder": "账号,密码 (回车) 账号,密码", "autoGrow": true, "rows": 5, "desc": "以英文逗号分隔账号与密码, 回车添加多个账号" },
+        { "id": "chavy_tokens_smzdm", "name": "令牌缓存 (自动生成, 无须手填)", "val": "", "type": "textarea", "placeholder": "正常情况下, 你无须修本字段的内容", "autoGrow": true, "rows": 5, "desc": "本字段的值由脚本自动生成, 无须手动编辑, 如需清除令牌缓存, 可直接删除本字段的值。" }
+      ],
+      "author": "@wangfei021325, @chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/smzdm",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/smzdm.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/smzdm.png", "https://raw.githubusercontent.com/Orz-3/task/master/smzdm.png"]
+    },
+        {
+      "id": "chavyleung.suning",
+      "name": "苏宁易购",
+      "settings": [{ "id": "chavy_logflag_suning", "name": "响应日志", "val": false, "type": "boolean", "desc": "是否输出响应返回体" }],
+      "keys": ["chavy_login_url_suning", "chavy_login_body_suning", "chavy_login_header_suning", "chavy_sign_url_suning", "chavy_sign_header_suning", "chavy_signweb_url_suning", "snyg_userTokenKey", "chavy_signweb_header_suning", "chavy_signgame_url_suning", "chavy_signgame_header_suning", "chavy_signgetgame_url_suning", "chavy_signgetgame_header_suning"],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/suning/suning.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/suning/suning.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/suning.png", "https://raw.githubusercontent.com/Orz-3/task/master/suning.png"]
+    },
+        {
+      "id": "feng",
+      "name": "威锋网",
+      "settings": [{ "id": "chavy_accounts_feng", "name": "威锋账号", "val": "", "type": "textarea", "placeholder": "账号,密码 (回车) 账号,密码", "autoGrow": true, "rows": 5, "desc": "以英文逗号分隔账号与密码, 回车添加多个账号" }],
+      "keys": [],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/feng",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/feng/feng.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/feng.png", "https://raw.githubusercontent.com/Orz-3/task/master/feng.png"]
+    },
+        {
+      "id": "chavyleung.bilibili.live",
+      "name": "bilibili直播",
+      "keys": ["chavy_cookie_bilibili"],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/blob/master/bilibili/bilibili.js",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/bilibili.png", "https://raw.githubusercontent.com/Orz-3/task/master/bilibili.png"]
+    },
+        {
+      "id": "WPS",
+      "name": "WPS",
+      "keys": ["chavy_signhomeurl_wps", "chavy_signhomeheader_wps"],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/wps",
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/wps.png", "https://raw.githubusercontent.com/Orz-3/task/master/wps.png"]
+    },
+    {
+      "id": "ximalaya",
+      "name": "喜马拉雅",
+      "keys": ["chavy_cookie_ximalaya"],
+      "author": "@chavyleung",
+      "repo": "https://github.com/chavyleung/scripts/tree/master/ximalaya",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/ximalaya.png", "https://raw.githubusercontent.com/Orz-3/task/master/ximalaya.png"],
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/ximalaya/ximalaya.js"
+    },
+   {
+    "id": "BaiduTB",
+    "name": "百度贴吧",
+    "keys": ["CookieTB"],
+    "descs_html": [
+      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js\">脚本注释</a></h4>"
+    ],
+    "settings": [{
+      "id": "BDTB_DailyBonus_Mode",
+      "name": "签到模式",
+      "val": "0",
+      "type": "radios",
+      "desc": "",
+      "items": [{
+        "key": "0",
+        "label": "自动切换"
+      }, {
+        "key": "1",
+        "label": "顺序执行"
+      }, {
+        "key": "2",
+        "label": "并发执行"
+      }]
+    }, {
+      "id": "BDTB_DailyBonus_notify",
+      "name": "通知汇总",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认20 (点击以展开说明)",
+      "desc": "想签到几个汇总到一个通知里, 这里就填几个(比如我有13个要签到的, 这里填了5, 就会分三次推送通知)"
+    }],
+    "script": "https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js",
+    "author": "@sazs34, @NobyDa",
+    "repo": "https://github.com/sazs34/TaskConfig/blob/master/task/sign_baidu_tieba_v2.js",
+    "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/tieba.png", "https://raw.githubusercontent.com/Orz-3/task/master/tieba.png"]
+  }, {
+    "id": "52poje",
+    "name": "吾爱破解",
+    "keys": ["CookieWA"],
+    "descs_html": [
+      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js\">脚本注释</a></h4>"
+    ],
+    "script": "https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js",
+    "author": "@NobyDa",
+    "repo": "https://github.com/NobyDa/Script/blob/master/52pojie-DailyBonus/52pojie.js",
+    "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/52pj.png", "https://raw.githubusercontent.com/Orz-3/task/master/52pj.png"]
+  }, 
+   {
+      "id": "xiaomiyp",
+      "name": "小米有品",
+      "keys": ["@xiaomiyp.cookie"],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/task/master/xiaomiyp.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/xiaomiyp.png"
+      ],
+      "author": "@dompling",
+      "repo": "https://github.com/dompling/Script/blob/master/xiaomiyp/xiaomiyp.js",
+      "script": "https://raw.githubusercontent.com/dompling/Script/master/xiaomiyp/xiaomiyp.js"
+    },
+     {
+      "id": "Caiyun",
+      "name": "彩云天气",
+      "keys": [
+        "@caiyun.token.caiyun",
+        "@caiyun.token.tencent",
+        "@caiyun.display_location",
+        "@caiyun.location.latitude",
+        "@caiyun.location.longitude",
+        "@caiyun.address"
+      ],
+      "settings": [
+        {
+          "id": "@caiyun.token.caiyun",
+          "name": "彩云天气API Token",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 2,
+          "desc": "彩云天气的Token，可以自行申请或者前往频道获取"
+        },
+        {
+          "id": "@caiyun.token.tencent",
+          "name": "腾讯地图API Token",
+          "val": "AHEBZ-ASTWX-CIW4P-7TV7T-AWKLS-7CFWP",
+          "type": "text",
+          "rows": 1,
+          "desc": ""
+        },
+        {
+          "id": "@caiyun.display_location",
+          "name": "是否在日志中显示经纬度",
+          "val": false,
+          "type": "boolean",
+          "desc": ""
+        },
+        {
+          "id": "@caiyun.location.latitude",
+          "name": "纬度",
+          "val": null,
+          "type": "text",
+          "desc": "纬度，可以关闭MITM获取位置，手动设置"
+        },
+        {
+          "id": "@caiyun.location.longitude",
+          "name": "经度",
+          "val": null,
+          "type": "text",
+          "desc": "经度，可以关闭MITM获取位置，手动设置"
+        }
+      ],
+      "author": "@Peng-YM",
+      "repo": "https://github.com/Peng-YM/QuanX",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
+      ],
+      "script": "https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js"
+    },
+    {
+      "id": "checkin",
+      "name": "机场签到",
+      "descs_html": [
+        "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js\">脚本地址</a>】",
+        "多个机场使用请用<font class=\"error--text\">中文逗号</font>分隔，顺序需要对应。",
+        "也可利用BoxJs<font class=\"error--text\">会话切换</font>功能，一次保存一个机场信息，切换会话签到。"
+      ],
+      "keys": [
+        "evil_checkintitle",
+        "evil_checkinlogin",
+        "evil_checkinemail",
+        "evil_checkinpwd"
+      ],
+      "settings": [
+        {
+          "id": "evil_autoLogout",
+          "name": "重新登陆",
+          "val": false,
+          "type": "boolean",
+          "desc": "打开则会重新登陆后签到"
+        },
+        {
+          "id": "evil_checkintitle",
+          "name": "标题",
+          "val": "",
+          "placeholder": "请填写，例如：隔壁西站",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "请依次填入标题，以中文逗号分隔"
+        },
+        {
+          "id": "evil_checkinlogin",
+          "name": "网址",
+          "val": "",
+          "placeholder": "请填写，例如：https://example.com/auth/login",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "请依次填入网址，以中文逗号分隔"
+        },
+        {
+          "id": "evil_checkinemail",
+          "name": "邮箱",
+          "val": "",
+          "placeholder": "请填写，例如：example@v2bz.com",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "请依次填入邮箱，以中文逗号分隔"
+        },
+        {
+          "id": "evil_checkinpwd",
+          "name": "密码",
+          "val": "",
+          "placeholder": "请填写，例如：password",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "请依次填入密码，以中文逗号分隔"
+        }
+      ],
+      "author": "@Neurogram, @evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/glados",
+      "icons": [
+        "https://raw.githubusercontent.com/58xinian/icon/master/glados_mini.png",
+        "https://raw.githubusercontent.com/58xinian/icon/master/glados_animation.gif"
+      ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js"
+    },
+    {
+      "id": "checkincookie",
+      "name": "机场签到Cookie",
+      "descs_html": [
+        "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkincookie_env.js\">脚本地址</a>】",
+        "此版本为尝试用Cookie签到，针对有登陆验证或跳转的机场。",
+        "可利用BoxJs<font class=\"error--text\">会话切换</font>功能，一次保存一个机场信息，切换会话签到。"
+      ],
+      "keys": ["evil_checkincktitle", "evil_checkinurl", "evil_checkincookie"],
+      "settings": [
+        {
+          "id": "evil_checkincktitle",
+          "name": "机场名称",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "手动填入机场名称"
+        },
+        {
+          "id": "evil_checkinurl",
+          "name": "登录链接",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "手动填入登陆链接"
+        },
+        {
+          "id": "evil_checkincookie",
+          "name": "Cookie",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "自动获取，也可手动填入Cookie，请不要修改"
+        }
+      ],
+      "author": "@Neurogram, @evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/glados",
+      "icons": [
+        "https://raw.githubusercontent.com/58xinian/icon/master/glados_mini.png",
+        "https://raw.githubusercontent.com/58xinian/icon/master/glados_animation.gif"
+      ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkincookie_env.js"
+    },
+     {
+      "id": "nasapic",
+      "name": "NASA每日一图",
+      "descs_html": [
+        "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js\">脚本地址</a>】",
+        "首先前往<a href=\"https://api.nasa.gov\">NASA</a>申请一个API，申请流程非常简单，把得到的API填入脚本即可"
+      ],
+      "keys": ["@NASA.nasaapi"],
+      "settings": [
+        {
+          "id": "@NASA.translate",
+          "name": "翻译",
+          "val": false,
+          "type": "boolean",
+          "desc": "是否进行翻译"
+        },
+        {
+          "id": "@NASA.nasaapi",
+          "name": "API",
+          "val": "",
+          "placeholder": "686BJ2YbpY****************Op8gaVTeVs0t",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "请填入API"
+        }
+      ],
+      "author": "@evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/nasa",
+      "icons": [
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/nasa_tran.png",
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/nasa.png"
+      ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js"
+    },
+    {
+      "id": "idaily",
+      "name": "iDaily",
+      "descs_html": [
+        "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/idaily/idaily.js\">脚本地址</a>】"
+      ],
+      "keys": ["@iDaily.random"],
+      "settings": [
+        {
+          "id": "@iDaily.random",
+          "name": "随机获取",
+          "val": false,
+          "type": "boolean",
+          "desc": "打开将会随机获取内容"
+        }
+      ],
+      "author": "@evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/idaily",
+      "icons": [
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/idaily_tran.png",
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/idaily.png"
+      ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/idaily/idaily.js"
+    },
+    {
+      "id": "jiumu",
+      "name": "九木杂物社",
+      "descs_html": [
+        "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/jiumu/jiumu.js\">脚本地址</a>】"
+      ],
+      "keys": [
+        "@Jiumu.evil_jiumuSignStr",
+        "@Jiumu.evil_jiumuReferer",
+        "@Jiumu.evil_jiumuVip",
+        "@Jiumu.evil_jiumuEncrypt",
+        "@Jiumu.evil_jiumuBody"
+      ],
+      "author": "@evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/jiumu",
+      "icons": [
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/jiumu_tran.png",
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/jiumu.png"
+      ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/jiumu/jiumu.js"
+    },
+    {
+      "id": "funboat",
+      "name": "Funboat",
+      "descs_html": [
+        "点此直达【<a href=\"https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/funboat/funboat.js\">脚本地址</a>】",
+        "微信小程序搜索 Funboat，按照脚本提示获取Cookie。",
+        "⚠️其他基于有赞的小程序也可能触发获取Cookie，请获取完后及时禁用获取Cookie重写/脚本。"
+      ],
+      "keys": [
+        "evil_funkourl",
+        "evil_funkocookie",
+        "evil_funkostatusurl",
+        "evil_funkostatuscookie"
+      ],
+      "author": "@evilbutcher",
+      "repo": "https://github.com/evilbutcher/Quantumult_X/tree/master/check_in/funboat",
+      "icons": [
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/funko_tran.png",
+        "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/funko.png"
+      ],
+      "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/funboat/funboat.js"
+    }
+    {
+      "id": "zZ.Douban",
+      "name": "电影日历",
+      "descs_html": [
+        "由于官方取消了 APIKey 的申请，请自行解决此问题：<ol><li>网上找别人之前申请的（关键字：<font class=\"red--text\">豆瓣 API Key</font>）</li> <li>下载 app 自行抓包 / 重写获取本机上的</li></ol>",
+        "若选择利用重写获得，请先按<a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/MovieCalendar/MovieCalendar.js\">脚本注释</a>进行配置，进入  widget 界面（负一屏），添加「豆瓣·电影日历」，并重新进入此界面使其刷新获取内容，若弹出\"首次写入 MovieCalendar APIKey 成功\"即可正常食用，其他提示或无提示请使用其他方法获取 APIKey。",
+        "注意：重试次数请勿填写过大，会导致<font class=\"red--text\">内存爆炸</font>💥！",
+        "当客户端选择「自定义跳转」时，可在下方填入需要跳转的链接，也可为 URL Scheme。需注意的是，普通链接应带 <font class=\"red--text\">http(s)://</font>。",
+        "URL Scheme 如：<ul type=\"disc\"><li>钉钉打卡：dingtalk://dingtalkclient/page/link?url=https://attend.dingtalk.com/attend/index.html</li><li>支付宝领积分：alipays://platformapi/startapp?appId=20000160&url=/www/pointSignIn.html</li><li>支付宝领家庭积分：alipays://platformapi/startapp?appId=2019052365379124</li><li>支付宝收能量：alipay://platformapi/startapp?appId=60000002</li><li>支付宝喂小鸡：alipays://platformapi/startapp?appId=66666674</li><li>支付宝消费券：alipays://platformapi/startapp?appId=2021001162654785</li><li>招行便民刮刮乐：cmbmobilebank://cmbls/functionjump?action=gocorpno&corpno=100891&shorturl=https%3A%2F%2Fcmb-scratchers.weijuju.com%2Fapp%2Findex</li><li>招行 188 抽奖：cmbmobilebank://cmbls/functionjump?action=gofuncid&funcid=16335001&needlogin=true&cmb_app_trans_parms_start=here&ActGroupID=AGP20201231114539LWG5kfNa&shorturl=http%3A%2F%2Fcmbt.cn%2FQQmnzR</li><li>招行 688 抽奖：cmbmobilebank://cmbls/functionjump?action=gofuncid&funcid=16335001&needlogin=true&cmb_app_trans_parms_start=here&ActGroupID=AGP20201231115927hrJ7vvyu&shorturl=http%3A%2F%2Fcmbt.cn%2FQQmnzR</li><li>小黑盒签到：heybox://</li><li>115 摇一摇：wx9b74cc2b355eef5f://</li></ul>"
+      ],
+      "keys": ["@MovieCalendar.apikey", "@MovieCalendar.diylink", "@MovieCalendar.time", "@MovieCalendar.choosePic", "@MovieCalendar.chooseClient"],
+      "settings": [
+        {
+          "id": "@MovieCalendar.debug",
+          "name": "测试环境",
+          "val": false,
+          "type": "boolean",
+          "desc": "如未出现特殊报错等问题请保持关闭。"
+        },
+        {
+          "id": "@MovieCalendar.time",
+          "name": "重试次数",
+          "val": "",
+          "type": "number",
+          "placeholder": "10", 
+          "desc": "运行时接口失败的重试次数，不填默认为 10，请谨慎填写，过大会爆内存。"
+        },
+        {
+          "id": "@MovieCalendar.apikey",
+          "name": "APIKey",
+          "val": "",
+          "type": "text", 
+          "desc": "豆瓣获取接口的 APIKey，请自行获取。"
+        }, 
+        {
+          "id": "@MovieCalendar.choosePic",
+          "name": "多媒体",
+          "val": "poster",
+          "type": "radios",
+          "desc": "选择通知中的多媒体。",
+          "items": [
+            { "key": "poster", "label": "电影剧照" },
+            { "key": "cover", "label": "电影海报" },
+            { "key": "trailer", "label": "预告片" }
+          ]
+        },
+        {
+          "id": "@MovieCalendar.chooseClient",
+          "name": "客户端",
+          "val": "Safari",
+          "type": "radios",
+          "desc": "选择点击跳转的客户端。",
+          "items": [
+            { "key": "Safari", "label": "Safari" },
+            { "key": "douban", "label": "豆瓣" },
+            { "key": "diy", "label": "自定义跳转" }
+          ]
+        },
+        {
+          "id": "@MovieCalendar.diylink",
+          "name": "跳转链接",
+          "val": "",
+          "type": "text",
+          "placeholder": "dingtalk://dingtalkclient/page/link?url=https://attend.dingtalk.com/attend/index.html", 
+          "desc": "自定义跳转链接，可为 URL Scheme，仅当客户端选择「自定义跳转」时有效。"
+        }
+      ],
+      "author": "@zZPiglet",
+      "repo": "https://github.com/zZPiglet/Task/blob/master/MovieCalendar/MovieCalendar.js",
+      "scripts": [
+        {
+          "name": "电影日历 样式一",
+          "script": "https://raw.githubusercontent.com/zZPiglet/Task/master/MovieCalendar/MovieCalendar.js"
+        },
+        {
+          "name": "电影日历 样式二",
+          "script": "https://raw.githubusercontent.com/zZPiglet/Task/master/MovieCalendar/MovieCalendar_lite.js"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/MovieCalendar.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/MovieCalendar.png"
+      ]
+    },
+       {
+      "id": "zZ.Weibo",
+      "name": "微博通知",
+      "descs_html": [
+        "请先进入<a href=\"https://m.weibo.cn\">手机网页版微博</a>并登陆按，再按<a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/Weibo/Weibo.js\">脚本注释</a>进行配置，然后回到网页刷新即可获取 Cookie。",
+        "请注意：一定要<font class=\"red--text\">先登录</font>，否则获取的为游客 Cookie，无法通知「特别关注」及有查看限制的微博。",
+        "运行后通知为「上一次」运行到「本次」运行之间的微博，其中「第零次」运行及「测试环境」默认为「很久很久很久···」以前（时间戳为0），所以第一次运行为接口返回的所有信息，之后有新微博才会通知。",
+        "需要注意的是：即便因配置错误运行之后有错误信息，此次运行时间戳也已经记录，若想还原到「第零次」的状态，请清空下面的时间戳。",
+        "注意：「特别管组」、「用户 ID」、「用户昵称」三者的通知均<font class=\"red--text\">独立</font>，请勿填写重复，以避免通知重复。",
+        "若有希望添加的点击跳转的客户端，请提供该客户端打开指定微博的 URL Scheme，反馈至 <a href=\"https://t.me/zZPiglet_bot\">@zZPiglet_bot</a>。"
+      ],
+      "keys": ["@Weibo.WeiboNotice", "@Weibo.interval", "@Weibo.Group", "@Weibo.Weibo_uids", "@Weibo.Weibo_nicknames", "@Weibo.chooseClient"],
+      "settings": [
+        {
+          "id": "@Weibo.debug",
+          "name": "测试环境",
+          "val": false,
+          "type": "boolean",
+          "desc": "如未出现特殊报错等问题请保持关闭。"
+        },
+        {
+          "id": "@Weibo.interval",
+          "name": "间隔",
+          "val": "",
+          "type": "number",
+          "placeholder": "1000", 
+          "desc": "运行时多通知之间时间间隔，单位为毫秒，不填默认为 1000 毫秒。"
+        },
+        {
+          "id": "@Weibo.update",
+          "name": "时间戳",
+          "val": "",
+          "type": "number", 
+          "desc": "上次运行时保存的时间戳，十三位。"
+        }, 
+        {
+          "id": "@Weibo.WeiboNotice",
+          "name": "Cookie",
+          "val": "",
+          "type": "textarea",
+          "rows": 2,
+          "autoGrow": true, 
+          "desc": "微博 Cookie，若抓包填入，只需填入 Cookie 中「SUB=」后至「;」中间的值。"
+        },
+        {
+          "id": "@Weibo.Group",
+          "name": "通知分组",
+          "val": ["Special"],
+          "type": "checkboxes",
+          "desc": "选择需要通知的分组",
+          "items": [
+            { "key": "Special", "label": "特别关注" },
+            { "key": "Spider", "label": "指定用户" }
+          ]
+        },
+        {
+          "id": "@Weibo.Weibo_uids",
+          "name": "用户 ID",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "1111681197,\n7099422177", 
+          "autoGrow": true, 
+          "rows": 2,
+          "desc": "填入需订阅的用户 uid，如不填入 uid 及昵称请取消上一项「指定用户」勾选。以英文逗号分隔多个 uid，可加回车。微博 uid 的获取方法：如「来去之间」微博主页为「https://weibo.com/wflanker」，需查看页面源码，找到「$CONFIG['oid'] = '1111681197'」即可得知 uid 为「1111681197」，切记不是「$CONFIG['uid']」，或直接访问手机端，其主页为「https://m.weibo.cn/u/1111681197?uid=1111681197」亦可得知。再如「外交部发言人办公室」微博主页为「https://weibo.com/u/7099422177」，则其 uid 为「7099422177」。"
+        },
+        {
+          "id": "@Weibo.Weibo_nicknames",
+          "name": "用户昵称",
+          "val": "",
+          "type": "textarea",
+          "placeholder": "央视新闻,\n搜狐娱乐", 
+          "autoGrow": true, 
+          "rows": 2,
+          "desc": "填入需订阅的用户昵称，如不填入 uid 及昵称请取消上一项「指定用户」勾选。以英文逗号分隔多个昵称，可加回车。请勿重复填写。"
+        },
+        {
+          "id": "@Weibo.chooseClient",
+          "name": "客户端",
+          "val": "Safari",
+          "type": "radios",
+          "desc": "选择点击跳转的客户端，如需加入想要的客户端，请提供该客户端打开指定微博的 URL Scheme，反馈至 @zZPiglet_bot，或提交 issue，或进行 PR。",
+          "items": [
+            { "key": "Safari", "label": "Safari" },
+            { "key": "Sinaweibo", "label": "微博" },
+            { "key": "Weibointernational", "label": "微博国际版" },
+            { "key": "VVebo", "label": "VVebo" }
+          ]
+        }
+      ],
+      "author": "@zZPiglet",
+      "repo": "https://github.com/zZPiglet/Task/blob/master/Weibo/Weibo.js",
+      "script": "https://raw.githubusercontent.com/zZPiglet/Task/master/Weibo/Weibo.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/weibo.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
+      ]
+    },
+   {
+      "id": "oneSay",
+      "name": "每天一句",
+      "keys": ["@oneSay.mediaImg", "@oneSay.username"],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/calendar.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/calendar.png"
+      ],
+      "author": "@dompling",
+      "repo": "https://github.com/dompling/Script/blob/master/oneSay/oneSay.js",
+      "script": "https://raw.githubusercontent.com/dompling/Script/master/oneSay/oneSay.js",
+      "settings": [
+        {
+          "id": "@oneSay.username",
+          "name": "姓名",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 2,
+          "placeholder": "必填姓名"
+        },
+        {
+          "id": "@oneSay.mediaImg",
+          "name": "内容媒体图",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 2,
+          "placeholder": "系统配送图，或者自定义",
+          "desc": "非必填"
+        }
+      ]
+    },
+    {
+      "id": "birthday",
+      "name": "生日倒计时",
+      "keys": [
+        "@birthday.mediaImg",
+        "@birthday.username",
+        "@birthday.time",
+        "@birthday.pDefault",
+        "@birthday.pCycle",
+        "@birthday.nongli",
+        "@birthday.eday",
+        "@birthday.loveWords"
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/birthday.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/birthday.png"
+      ],
+      "author": "@dompling",
+      "repo": "https://github.com/dompling/Script/blob/master/birthdayCountDown/index.js",
+      "script": "https://raw.githubusercontent.com/dompling/Script/master/birthdayCountDown/index.js",
+      "settings": [
+        {
+          "id": "@birthday.nongli",
+          "name": "农历",
+          "val": true,
+          "type": "boolean"
+        },
+        {
+          "id": "@birthday.loveWords",
+          "name": "情话",
+          "val": true,
+          "type": "boolean"
+        },
+        {
+          "id": "@birthday.username",
+          "name": "姓名",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 2,
+          "placeholder": "必填姓名"
+        },
+        {
+          "id": "@birthday.time",
+          "name": "出生年月",
+          "val": null,
+          "type": "text",
+          "rows": 2,
+          "placeholder": "必填内容，出身年月格式为：年-月-日。"
+        },
+        {
+          "id": "@birthday.mediaImg",
+          "name": "内容媒体图",
+          "val": null,
+          "type": "text",
+          "autoGrow": false,
+          "rows": 2,
+          "placeholder": "默认取的随机推送图片",
+          "desc": "非必填"
+        },
+        {
+          "id": "@birthday.eday",
+          "name": "情侣相识日期",
+          "val": null,
+          "type": "text",
+          "rows": 2,
+          "placeholder": "相识的日期",
+          "desc": "非必填"
+        },
+        {
+          "id": "@birthday.pDefault",
+          "name": "生理期",
+          "val": null,
+          "type": "text",
+          "rows": 2,
+          "placeholder": "最近一次生理期时间",
+          "desc": "非必填"
+        },
+        {
+          "id": "@birthday.pCycle",
+          "name": "生理期区间",
+          "val": null,
+          "type": "text",
+          "rows": 2,
+          "placeholder": "生理期区间，最近一次生理期开始计算。",
+          "desc": "非必填；计算不准时，请重填生理期。"
+        }
+      ]
+    }
+  ]
+}
